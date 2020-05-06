@@ -26,8 +26,8 @@ var odVersion int
 // RootCmd asd
 var rootCmd = &cobra.Command{
 	Use:   "odfe-monitor-cli",
-	Short: "Manage opendistro alerting monitors. Fork esfateev",
-	Long:  `This application will help you to manage the Opendistro alerting monitors using YAML files.`,
+	Short: "Manage opendistro alerting monitors.",
+	Long:  `This application will help you to manage the Opendistro alerting monitors using YAML files. esfateev fork`,
 }
 
 func init() {
