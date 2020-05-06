@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mihirsoni/odfe-monitor-cli/es"
+	"github.com/esfateev/odfe-monitor-cli/es"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	mapset "github.com/deckarep/golang-set"
-	"github.com/mihirsoni/odfe-monitor-cli/es"
-	"github.com/mihirsoni/odfe-monitor-cli/utils"
+	"github.com/esfateev/odfe-monitor-cli/es"
+	"github.com/esfateev/odfe-monitor-cli/utils"
 	"github.com/pkg/errors"
 )
 

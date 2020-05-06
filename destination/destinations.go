@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/mihirsoni/odfe-monitor-cli/es"
+	"github.com/esfateev/odfe-monitor-cli/es"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
 )

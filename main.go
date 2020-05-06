@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/mihirsoni/odfe-monitor-cli/commands"
+	"github.com/esfateev/odfe-monitor-cli/commands"
 )
 
 func main() {
