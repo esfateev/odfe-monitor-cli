@@ -45,6 +45,8 @@ func init() {
 }
 
 func setup() {
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
 	if esURL != "" {
 		//Validate URL
 		if isURL(esURL) {

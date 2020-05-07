@@ -184,6 +184,8 @@ func (monitor *Monitor) Run(esClient es.Client, dryRun bool) error {
 
 // Update will modify existing monitor
 func (monitor *Monitor) Update(esClient es.Client) error {
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
 	requestBody, err := json.Marshal(monitor)
 	if err != nil {
 		return errors.Wrap(err, "Unable to parse monitor Object "+monitor.Name)
@@ -208,6 +210,8 @@ func (monitor *Monitor) Update(esClient es.Client) error {
 
 // Create will create new monitor
 func (monitor *Monitor) Create(esClient es.Client) error {
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
 	requestBody, err := json.Marshal(monitor)
 	if err != nil {
 		return errors.Wrap(err, "Unable to parse monitor Object "+monitor.Name)

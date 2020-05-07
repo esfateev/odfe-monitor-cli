@@ -59,6 +59,8 @@ func checkRetry(ctx context.Context, resp *http.Response, err error) (bool, erro
 
 // MakeRequest initiate request to ES API
 func (esClient *Client) MakeRequest(method string,
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
 	endPoint string,
 	body []byte,
 	headers map[string]string) (Response, error) {
