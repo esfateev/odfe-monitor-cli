@@ -1,9 +1,9 @@
 package monitor
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
+	"github.com/json-iterator/go"
 
 	mapset "github.com/deckarep/golang-set"
 	"github.com/esfateev/odfe-monitor-cli/es"
@@ -32,6 +32,9 @@ func GetAllRemote(esClient es.Client, destinationsMap map[string]string) (map[st
 	}
 	for _, hit := range resp.Data["hits"].(map[string]interface{})["hits"].([]interface{}) {
 		var monitor Monitor
+		var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
+
 		parsedMonitor, err := json.Marshal(hit.(map[string]interface{})["_source"])
 		if err != nil {
 			return nil, nil, errors.Wrap(err, "Invalid remote JSON document")
@@ -136,6 +139,8 @@ func (monitor *Monitor) Prepare(
 
 // Run will execute monitor
 func (monitor *Monitor) Run(esClient es.Client, dryRun bool) error {
+	var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
 	requestBody, err := json.Marshal(monitor)
 	if err != nil {
 		return errors.Wrap(err, "Unable to parse monitor correctly")

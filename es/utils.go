@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"context"
 	"crypto/tls"
-	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"time"
+	"github.com/json-iterator/go"
 
 	"github.com/hashicorp/go-retryablehttp"
 )
@@ -39,6 +39,8 @@ func checkRetry(ctx context.Context, resp *http.Response, err error) (bool, erro
 	// Don't retry 400 for all bad request
 	if resp.StatusCode == 400 {
 		var data map[string]interface{}
+		var json = jsoniter.ConfigCompatibleWithStandardLibrary
+	
 		json.NewDecoder(resp.Body).Decode(&data)
 		// This is required to reassign the Body as we're reading it. Stream can't be read twice
 		dataByte, _ := json.Marshal(data)

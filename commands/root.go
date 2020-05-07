@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"encoding/json"
+	"github.com/json-iterator/go"
 	"net/http"
 	"os"
 	"strings"
@@ -27,7 +27,7 @@ var odVersion int
 var rootCmd = &cobra.Command{
 	Use:   "odfe-monitor-cli",
 	Short: "Manage opendistro alerting monitors.",
-	Long:  `This application will help you to manage the Opendistro alerting monitors using YAML files. esfateev fork`,
+	Long:  `This application will help you to manage the Opendistro alerting monitors using YAML files.`,
 }
 
 func init() {
